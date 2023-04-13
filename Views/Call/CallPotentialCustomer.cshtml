@@ -1,0 +1,187 @@
+@{
+   ViewData["title"] = "بيانات الاتصال";
+}
+
+<div class="layout-wrapper layout-content-navbar">
+        <!-- Menu -->
+
+        <div class="layout-page">
+  <!-- Layout wrapper -->
+ 
+
+
+      <!-- / Menu -->
+      <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <!-- Layout container -->
+
+          <div class="card">
+            <div class="card-header border-bottom">
+              
+              <h2 class="card-title text-center text-primary "> جاري الإتصال </h2>
+              <div class="row mx-2">
+                <div class="col-sm-12 col-md-4 col-lg-6">
+                  <div class="datatables_length" id="DataTables_Table_0_length">
+                    <div class="info-container">
+                      <ul class="list-unstyled">
+                        <li class="md-3"><span class="fw-bold me-2">مختار صالح الشتوي</span></li>
+                        <li class="md-3"><span>mokhtar77097@gmail.com-770973531</span></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-6">
+                  <div
+                    class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+                    <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                      <div class="d-grid gap-2">
+                        <button  class="btn btn-primary  " data-bs-toggle="offcanvas" data-bs-target="#sendInvoiceOffcanvas">
+                            <span class="d-flex justify-content-center align-items-center text-nowrap">
+                              <i class=""></i>إضافة سؤال </span></button>
+                                <a href="end-call.html" >
+                                    <button class="btn btn-danger" type="button">  إنهاء المكالمة</button>
+                                </a>
+                            </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="offcanvas offcanvas-end show" id="sendInvoiceOffcanvas" style="visibility: visible;" aria-modal="true" role="dialog">
+                  <div class="offcanvas-header border-bottom">
+                    <h2 class="offcanvas-title"> إضافة سؤال </h2>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body flex-grow-1">
+                    <form>
+                      <div class="checkbox-card">
+                        <label for="invoice-message" class="form-label">نص السؤال</label>
+                        <textarea class="form-control" name="invoice-message" id="invoice-message" cols="3" rows="4">
+                         </textarea>
+                         <small>أدخل نبذة عن السؤال الذي سئل عنه العميل</small>
+
+                       <div class="passport-box" >
+                        <label for="invoice-message" class="form-label">نص الجواب</label>
+                        <textarea class="form-control " name="invoice-message" id="invoice-message" cols="3" rows="4">
+                         </textarea>
+                         <small>أدخل إجابتك عن السؤال</small>
+                       </div>
+
+                         <div class="mb-3">
+                          <div class="form-check">
+                            <input class="form-check-input"  type="checkbox" id="checkme" />
+                            <label class="form-check-label " for="text-nowrap"> بدون جواب </label>
+                          </div>
+                        </div>
+                      </div>
+                     
+
+                      </div>
+                      
+                      <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary " data-bs-dismiss="offcanvas">إضافة</button>
+                        <button type="button" class="btn btn-secondary " data-bs-dismiss="offcanvas">إلغاء</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+        </div></div>
+
+          <div class="row g-3 mb-3 d-flex justify-content-center">
+            
+          
+
+            <!-- Content -->
+
+            <div class="col-sm-6 col-xl-6  ">
+              <!-- Layout container -->
+              <div class="card">
+                <h2 class="card-header text-center">  معلومات الاتصال </h2>
+                <div class="card-datatable text-nowrap">
+                    <h5>العميل</h5>
+                   
+                        <form id="editUserForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false" novalidate="novalidate">
+                           
+                            <div class="col-12 fv-plugins-icon-container">
+                              <label class="form-label" for="modalEditUserName">اسم العميل</label>
+                              <input type="text" id="modalEditUserName" name="modalEditUserName" class="form-control" placeholder="اسم المتصل">
+                            <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                            <h5>المشروع</h5>
+                            <div class="col-12 col-md-4">
+                              <label class="form-label" for="project name">اسم المشروع</label>
+                              <input type="text" id="project name" name="project name" class="form-control" placeholder="اسم المشروع">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="project name">اسم المالك</label>
+                                <input type="text" id="project name" name="project name" class="form-control" placeholder="اسم المالك">
+                              </div>
+                            <div class="col-12 col-md-4">
+                              <label class="form-label" for="projectfield">مجال المشروع</label>
+                              <select id="projectfield" name="projectfield" class="form-select" aria-label="Default select example">
+                                <option selected="">إختر مجال</option>
+                                <option value="1"></option>
+                                <option value="2"></option>
+                                <option value="3"></option>
+                              </select>
+                            </div>
+                            <h5>العنوان</h5>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="city">المدينة </label>
+                                <select id="city" name="city" class="form-select" aria-label="Default select example">
+                                  <option selected="">إختر مدينة</option>
+                                  <option value="1">صنعاء</option>
+                                  <option value="2">ذمار</option>
+                                  <option value="3">عمران </option>
+                                  <option value="3">حجة</option>
+                                  <option value="3">صعدة</option>
+                                  <option value="3">المحويت</option>
+                                  <option value="3">الحديدة</option>
+                                </select>
+                              </div>
+                            <div class="col-12 col-md-6">
+                              <label class="form-label" for="title"> العنوان</label>
+                              <div class="input-group input-group-merge">
+                               
+                                <input type="text" id="title" name="title" class="form-control phone-number-mask" placeholder=" العنوان">
+                              </div>
+                            </div>
+                            
+                            
+                           
+                            <div class="col-12 text-center mt-4 d-flex justify-content-md-end">
+                              <button type="submit" class="btn btn-primary me-1 me-sm-3">حفظ العميل</button>
+                              
+                            </div>
+                          <div></div><input type="hidden"></form>
+                    
+                 
+                </div>
+              </div>
+            </div>
+            <!-- Offcanvas to add new user -->
+
+    </div>
+</div>
+</div>
+        <!-- / Layout wrapper -->
+
+        
+        <script>
+          $(function(){
+            $("#checkme").click(function(event){
+              var x =$(this).is(':checked');
+              if(x==false){
+                $(this).parents(".checkbox-card").find('.passport-box').show();
+              }
+              else{
+                $(this).parents(".checkbox-card").find('.passport-box').hide();
+              }
+            });
+          });
+          </script>
+

@@ -1,0 +1,614 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "تقرير الاسئلة";
+}
+
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <!-- Menu -->
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+            <div class="app-brand demo">
+                <div class="container">
+                        <img src="~/assets/img/favicon/crm.png" style="width:100% !important; height:100%;" />
+                    </div>
+                <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                    <i class="bx menu-toggle-icon fs-4 d-none d-xl-block align-middle"></i>
+                    <i class="bx bx-x bx-sm d-xl-none d-block align-middle"></i>
+                </a>
+            </div>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">@SystemInfoResource.SystemName</span>
+            <div class="menu-divider mt-0"></div>
+            <div class="menu-inner-shadow"></div>
+            <ul class="menu-inner py-1">
+                <li class="menu-item ctive" style="">
+                    <a href="/customer" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-user"></i>
+                        <div >@SideBarResources.Clients</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/call" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-phone"></i>
+                        <div >@SideBarResources.Calls</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/session" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-chat"></i>
+                        <div >@SideBarResources.Sessions</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/message" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-message"></i>
+                        <div >@SideBarResources.Message</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/email" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-envelope"></i>
+                        <div>@SideBarResources.EmailMessage</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/question" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-question-mark"></i>
+                        <div>@SideBarResources.QuestionAndAnswers</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-calendar"></i>
+                        <div >@SideBarResources.Scheduling</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bx-cog"></i>
+                        <div >@SideBarResources.Setting</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="/setting" class="menu-link">
+                                <div >@SideBarResources.SystemUsers</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/setting/roles" class="menu-link">
+                                <div>@SideBarResources.Roles</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item mt-auto">
+                    <div class="p-4 align-self-end">
+                        001 عمر فؤاد القطابري
+                        <i class="menu-icon tf-icons bx bx-log-in p-2 align-self-end icons-danger"></i>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+      <!-- / Menu -->
+        <div class="layout-page">
+             <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+                <div class="container-fluid">
+                    <div class="layout-menu-toggle navbar-nav d-xl-none align-items-xl-center me-3 me-xl-0">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item navbar-search-wrapper mb-0">
+                                <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">
+                                    <i class="bx bx-search-alt bx-sm"></i>
+                                    <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+
+                            <!-- Quick links -->
+                            <!-- Notification -->
+                            <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+                                <a class="nav-link dropdown-toggle hide-arrow"
+                                   href="javascript:void(0);"
+                                   data-bs-toggle="dropdown"
+                                   data-bs-auto-close="outside"
+                                   aria-expanded="false">
+                                    <i class="bx bx-bell bx-sm"></i>
+                                    <span class="badge rounded-pill badge-notifications bg-danger">5</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end py-0">
+                                    <li class="dropdown-menu-header border-bottom">
+                                        <div class="dropdown-header d-flex align-items-center py-3">
+                                            <h5 class="text-body me-auto mb-0">Notification</h5>
+                                            <a href="javascript:void(0)"
+                                               class="dropdown-notifications-all text-body"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top"
+                                               title="Mark all as read">
+                                                <i class="bx fs-4 bx-envelope-open"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-notifications-list scrollable-container">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Congratulation Lettie 🎉</h6>
+                                                        <p class="mb-0">Won the monthly best seller gold badge</p>
+                                                        <small class="text-muted">1h ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial bg-label-danger rounded-circle">CF</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Charles Franklin</h6>
+                                                        <p class="mb-0">Accepted your connection</p>
+                                                        <small class="text-muted">12hr ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">New Message ✉️</h6>
+                                                        <p class="mb-0">You have new message from Natalie</p>
+                                                        <small class="text-muted">1h ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial bg-label-success rounded-circle">
+                                                                <i class="bx bx-cart"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Whoo! You have new order 🛒</h6>
+                                                        <p class="mb-0">ACME Inc. made new order $1,154</p>
+                                                        <small class="text-muted">1 day ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../assets/img/avatars/9.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Application has been approved 🚀</h6>
+                                                        <p class="mb-0">Your ABC project application has been approved.</p>
+                                                        <small class="text-muted">2 days ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial bg-label-success rounded-circle">
+                                                                <i class="bx bx-pie-chart-alt"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Monthly report is generated</h6>
+                                                        <p class="mb-0">July monthly financial report is generated</p>
+                                                        <small class="text-muted">3 days ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../assets/img/avatars/5.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Send connection request</h6>
+                                                        <p class="mb-0">Peter sent you connection request</p>
+                                                        <small class="text-muted">4 days ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">New message from Jane</h6>
+                                                        <p class="mb-0">Your have new message from Jane</p>
+                                                        <small class="text-muted">5 days ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial bg-label-warning rounded-circle">
+                                                                <i class="bx bx-error"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">CPU is running high</h6>
+                                                        <p class="mb-0">CPU Utilization Percent is currently at 88.63%,</p>
+                                                        <small class="text-muted">5 days ago</small>
+                                                    </div>
+                                                    <div class="dropdown-notifications-actions flex-shrink-0">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="bx bx-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-menu-footer border-top">
+                                        <a href="javascript:void(0);" class="dropdown-item d-flex justify-content-center p-3">
+                                            View all notifications
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ Notification -->
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="../../assets/img/avatars/1.png" alt class="rounded-circle" />
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="../../assets/img/avatars/1.png" alt class="rounded-circle" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="lh-1 d-block fw-semibold">John Doe</span>
+                                                    <small>Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-profile-user.html">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <i class="bx bx-cog me-2"></i>
+                                            <span class="align-middle">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-billing.html">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <i class="bx bx-credit-card flex-shrink-0 me-2"></i>
+                                                <span class="flex-grow-1 align-middle">Billing</span>
+                                                <span class="badge badge-center rounded-pill w-px-20 h-px-20 flex-shrink-0 bg-danger">4</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-help-center-landing.html">
+                                            <i class="bx bx-support me-2"></i>
+                                            <span class="align-middle">Help</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-faq.html">
+                                            <i class="bx bx-help-circle me-2"></i>
+                                            <span class="align-middle">FAQ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-pricing.html">
+                                            <i class="bx bx-dollar me-2"></i>
+                                            <span class="align-middle">Pricing</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+
+                    <!-- Search Small Screens -->
+                    <div class="navbar-search-wrapper search-input-wrapper d-none">
+                        <input type="text"
+                               class="form-control search-input container-fluid border-0"
+                               placeholder="Search..."
+                               aria-label="Search..." />
+                        <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
+                    </div>
+                </div>
+            </nav>
+        <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+
+                <div class="card">
+                        <h2 class="card-header">@PageHeaders.Question</h2>
+                    <div class="card-datatable text-nowrap">
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6" style="width: 30%;">
+                                    <div class="dataTables_length" id="DataTables_Table_0_length">
+                                        <label class="d-flex">
+                                                <span class="px-2" >@FormResources.Show</span>
+                                                <select name="perpage"  aria-controls="per_page" class="form-select w-25">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                                </select>
+                                                <span class="px-2">@FormResources.Inputs</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end " style="width: 70%;">
+                                    <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                                       <label>
+                                            <span class="px-2">@FormResources.SearchN:</span>
+                                            <input type="search" class="form-control" placeholder="@FormResources.Search" aria-controls="per_page">
+                                        </label>
+                                    </div>
+                                    <div class="demo-inline-spacing">
+
+                                        <button class="btn btn-primary  " data-bs-toggle="offcanvas" data-bs-target="#sendInvoiceOffcanvas">
+                                            <span class="d-flex justify-content-center align-items-center text-nowrap">
+                                                <i class=""></i>إضافة سؤال
+                                            </span>
+                                        </button>
+
+                                    </div>
+                                </div>
+                                <div class="offcanvas offcanvas-end show" id="sendInvoiceOffcanvas" style="visibility: visible;" aria-modal="true" role="dialog">
+                                    <div class="offcanvas-header border-bottom">
+                                        <h2 class="offcanvas-title"> إضافة سؤال </h2>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body flex-grow-1">
+                                        <form>
+                                            <div class="checkbox-card">
+                                                <label for="invoice-message" class="form-label">نص السؤال</label>
+                                                <textarea class="form-control" name="invoice-message" id="invoice-message" cols="3" rows="4">
+                                                 </textarea>
+                                                <small>أدخل نبذة عن السؤال الذي سئل عنه العميل</small>
+
+                                                <div class="passport-box">
+                                                    <label for="invoice-message" class="form-label">نص الجواب</label>
+                                                    <textarea class="form-control " name="invoice-message" id="invoice-message" cols="3" rows="4">
+                                                     </textarea>
+                                                    <small>أدخل إجابتك عن السؤال</small>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="checkme" />
+                                                        <label class="form-check-label " for="text-nowrap"> بدون جواب </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="button" class="btn btn-primary " data-bs-dismiss="offcanvas">إضافة</button>
+                                        <button type="button" class="btn btn-secondary " data-bs-dismiss="offcanvas">إلغاء</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="dataTables_scroll">
+                            <div class="dataTables_scrollHead"
+                                 style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+                            </div>
+                            <div class="dataTables_scrollBody"
+                                 style="position: relative; overflow: auto; width: 100%; max-height: 500px; height: 500px;">
+                                <table class="datatables-users table border-down">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:50px;">@TableHeaderQuestion.Id</th>
+                                                <th>@TableHeaderQuestion.QuestionText</th>
+                                                <th style="width:50px;"> @TableHeaderQuestion.Answers </th>
+                                                <th style="width:90px;"> @TableHeaderQuestion.Show </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>#</td>
+                                            <td>نص السؤال </td>
+                                            <td>3 إجابات</td>
+                                            <td><a href="/question/answers"><i class="menu-icon tf-icons bx bx-link-external"></i></a></td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                                    عرض 1الى10من 100مدخلات
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                    <ul class="pagination">
+                                        <li class="paginate_button page-item previous disabled active" id="DataTables_Table_0_previous">
+                                            <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+                                                   class="page-link">@FormResources.Previous</a>
+                                        </li>
+                                        <li class="paginate_button" id="">
+                                            <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link ">
+                                                1/10
+                                            </a>
+                                        </li>
+                                        <li class="paginate_button page-item next disabled active " id="DataTables_Table_0_next">
+                                            <a href="#"
+                                               aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">@FormResources.Next</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Offcanvas to add new user -->
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- / Layout wrapper -->
+@section Script{
+<script>
+          $(function(){
+            $("#checkme").click(function(event){
+              var x =$(this).is(':checked');
+              if(x==false){
+                $(this).parents(".checkbox-card").find('.passport-box').show();
+              }
+              else{
+                $(this).parents(".checkbox-card").find('.passport-box').hide();
+              }
+            });
+          });
+         </script>
+}

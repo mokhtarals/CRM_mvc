@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["title"] = "تأكيد الحجز";
+}
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner py-4">
+            <!-- Register -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Logo -->
+
+                        <div class="container">
+                        <img src="~/assets/img/crm.png" class="mx-auto w-100" > 
+                     </div>
+
+                    <i class="bx bx-x d-block d-xl-none bx-sm align-middle"></i>
+                    <h1 class="container text-primary text-center">خدمة العملاء</h1>
+
+                    <!-- /Logo -->
+
+
+                    <h2>تأكيد طلب جلسة </h2>
+                    <p>قم بادخال المعلومات التالية لتأكيد طلب  في جلسة جديدة  </p>
+                    <form id="formAuthentication" class="mb-3" action="" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">الكود </label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   name="email-username"
+                                   placeholder=" ادخل  كود التأكيد "
+                                   autofocus />
+                        </div>
+
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit">  تأكيد </button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+            <!-- /Register -->
+        </div>
+    </div>
+</div>

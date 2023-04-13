@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["title"] = "طلب جلسة";
+}
+
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner py-4">
+            <!-- Register -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Logo -->
+
+                    <div class="container">
+                        <img src="~/assets/img/crm.png" class="mx-auto"> 
+                    </div>
+
+                    <i class="bx bx-x d-block d-xl-none bx-sm align-middle"></i>
+                    <h1 class="container text-primary text-center">خدمة العملاء</h1>
+
+                    <!-- /Logo -->
+
+
+                    <h2> طلب جلسة محادثة</h2>
+                    <p>قم بادخال المعلومات التالية للدخول في جلسة جديدة  </p>
+                    <form id="formAuthentication" class="mb-3" action="clints.html" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">الاسم </label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   name="email-username"
+                                   placeholder=" ادخل اسم العميل "
+                                   autofocus />
+                        </div>
+                        <div class="form-password-toggle mb-3">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" for="number">رقم الهاتف </label>
+
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="text"
+                                       id="number"
+                                       class="form-control phone-number-mask"
+                                       name="number"
+                                       placeholder="دخل رقم هاتف العميل" />
+
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit">ارسال رمز التأكيد </button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+            <!-- /Register -->
+        </div>
+    </div>
+</div>
+

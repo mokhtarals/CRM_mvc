@@ -1,0 +1,128 @@
+@{
+    ViewData["title"] = "بيانات الاتصال";
+}
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <!-- Menu -->
+
+            <div class="layout-page">
+      <!-- / Menu -->
+      <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <!-- Layout container -->
+
+          <div class="card">
+            <div class="card-header border-bottom">
+              <div class="">
+                <a href="answer.html" type=""> <button type="submit" class="btn btn-secondary me-1 me-sm-3"><i
+                      class="menu-icon tf-icons bx bx-chevron-right"></i>الرجوع </button></a>
+              </div>
+                            <h2 class="card-title text-center text-primary "> @PageHeaders.CallInformation</h2>
+              <div class="row mx-2">
+                <div class="col-sm-12 col-md-4 col-lg-6">
+                  <div class="datatables_length" id="DataTables_Table_0_length">
+                    <div class="info-container">
+                      <ul class="list-unstyled">
+                        <li class="md-3"><span class="fw-bold me-2">مختار صالح الشتوي</span></li>
+                        <li class="md-3"><span>mokhtar77097@gmail.com-770973531</span></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card">
+            <h2 class="card-header"> الأسئلة </h2>
+            <div class="card-datatable text-nowrap">
+              <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="DataTables_Table_0_length"><label>عرض <select
+                          name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select> المدخلات</label></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>بحث:<input type="search"
+                          class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                  </div>
+                </div>
+                <div class="dataTables_scroll">
+                  <div class="dataTables_scrollHead"
+                    style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+
+                  </div>
+                  <div class="dataTables_scrollBody"
+                    style="position: relative; overflow: auto; width: 100%; max-height: 300px; height: 300px;">
+                    <table class="datatables-users table border-down">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>نص السؤال </th>
+                          <th>الإجابات </th>
+                          <th> عرض </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                          <td>1</td>
+                          <td>نص السؤال </td>
+                          <td>3إجابات </td>
+                          <td><a href="answer.html"><i class="menu-icon tf-icons bx bx-link-external"></i></a></td>
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                      عرض 1الى10من 100مدخلات
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                      <ul class="pagination">
+                        <li class="paginate_button page-item previous disabled active" id="DataTables_Table_0_previous">
+                          <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+                            class="page-link">@FormResources.Previous</a></li>
+                        <li class="paginate_button" id="">
+                          <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
+                            class="page-link ">
+                            1/10
+                          </a>
+                        </li>
+                        <li class="paginate_button page-item next disabled active " id="DataTables_Table_0_next"><a
+                            href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
+                                                       class="page-link">@FormResources.Next</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Layout container -->
+
+        </div>
+      </div>
+      <!-- Offcanvas to add new user -->
+            </div>
+    </div>
+  </div>
+  

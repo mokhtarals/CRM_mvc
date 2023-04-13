@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewData["tag"] = "agents";
+}
+<div class="card">
+    <h2 class="card-header"> سجل العملاء</h2>
+    <div class="card-datatable text-nowrap">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="DataTables_Table_0_length">
+                        <label>
+                            عرض
+                            <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> المدخلات
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                        <label>
+                            بحث:<input type="search"
+                                       class="form-control" placeholder="" aria-controls="DataTables_Table_0">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="dataTables_scroll">
+                <div class="dataTables_scrollHead"
+                     style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+                </div>
+                <div class="dataTables_scrollBody"
+                     style="position: relative; overflow: auto; width: 100%; max-height: 500px; height: 500px;">
+                    <table class="datatables-users table border-down">
+                        <thead>
+                            <tr>
+                                <th>رقم العميل</th>
+                                <th>اسم العميل</th>
+                                <th>ايميل العميل</th>
+                                <th> الاتصالات</th>
+                                <th>المحادثات </th>
+                                <th>العرض</th>
+                            </tr>
+                            <tr>
+                                <td>770973531</td>
+                                <td>مختار الشتوي</td>
+                                <td>mokhtar77097@gmail.com</td>
+                                <td>3</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="customer-inf.html"><i class="menu-icon tf-icons bx bx-link-external"></i></a>
+                                </td>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                        عرض 1الى10من 100مدخلات
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                        <ul class="pagination">
+                            <li class="paginate_button page-item previous disabled active" id="DataTables_Table_0_previous">
+                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+                                   class="page-link">السابق</a>
+                            </li>
+                            <li class="paginate_button" id="">
+                                <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link ">
+                                    1/10
+                                </a>
+                            </li>
+                            <li class="paginate_button page-item next disabled active " id="DataTables_Table_0_next">
+                                <a href="#"
+                                   aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">التالي</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Offcanvas to add new user -->

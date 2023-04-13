@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "ارسل ايميل";
+}
+
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        <!-- Menu -->
+        <!-- / Menu -->
+        <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+
+                <div class="card">
+                    <h2 class="card-header">@PageHeaders.SendEmail</h2>
+                    <div class="card-datatable text-nowrap">
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                            <div class="row">
+                                <div class="dataTables_scroll">
+                                    <div class="dataTables_scrollHead"
+                                         style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+                                    </div>
+                                    <div class="dataTables_scrollBody"
+                                         style="position: relative; overflow: auto; width: 100%; max-height: 600px; height: 600px;">
+
+                                        <div class="" id="sendInvoiceOffcanvas" style="visibility: visible;" aria-modal="true"
+                                             role="dialog">
+
+                                            <div class="offcanvas-body flex-grow-1">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="invoice-from" class="form-label"> العنوان</label>
+                                                        <input type="text" class="form-control" value="" placeholder="مساعدة">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="invoice-from" class="form-label"> إلى</label>
+                                                        <input type="text" class="form-control" value="" placeholder="">
+                                                    </div>
+                                                    <p>أدخل بريد واجد أو أكثر </p>
+
+                                                    <label for="invoice-message" class="form-label">نص الرسالة</label>
+                                                    <textarea class="form-control" name="invoice-message" id="invoice-message"
+                                                              placeholder="مرحبا..." cols="3" rows="12">
+
+                           </textarea>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap mb-3 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-danger" data-bs-dismiss="offcanvas">
+                                                    <i class="menu-icon tf-icons bx bx-x"></i>إلغاء
+                                                </button>
+                                                <button type="button" class="btn btn-primary " data-bs-dismiss="offcanvas">
+                                                    <i class="bx bx-paper-plane bx-xs me-3"></i>إرسال
+                                                </button>
+
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Offcanvas to add new user -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
